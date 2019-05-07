@@ -51,25 +51,15 @@ namespace WindowsFormsApp1
             //    textBox1.Text += "----------------------\r\n";
             //}
 
+            //步驟跟照片
            HtmlNodeCollection NodeStep= node.SelectNodes("//*[@id=\"food\"]/div[5]/div[4]/div[1]/div[3]/div[2]/div");
-
-
-
             foreach (var item in NodeStep)
             {
                 //textBox1.Text += "OK" + "\r\n";
-                //*[@id="food"]/div[5]/div[4]/div[1]/div[3]/div[2]/div[1]/span
-                //*[@id="food"]/div[5]/div[4]/div[1]/div[3]/div[2]/div[1]/span/img
-                //textBox1.Text += item.InnerHtml + "\r\n";
-
+     
                 textBox1.Text += item.SelectSingleNode("./span/img").Attributes["src"].Value + "\r\n";
                 textBox1.Text += item.SelectSingleNode("./div/p").InnerText + "\r\n";
                 textBox1.Text += "------------------\r\n";
-                //List01= item.SelectSingleNode("./dd").InnerText;
-
-                //textBox1.Text += item.SelectSingleNode("./img").Attributes["alt"].Value;
-                //textBox1.Text += item.Attributes["src"].Value;
-                //textBox1.Text += item.Attributes["alt"].Value;
             }
 
 
