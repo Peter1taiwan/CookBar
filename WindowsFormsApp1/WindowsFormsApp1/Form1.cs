@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             HtmlWeb web = new HtmlWeb();
-            HtmlAgilityPack.HtmlDocument document = web.Load("https://food.ltn.com.tw/article/8951");
+            HtmlAgilityPack.HtmlDocument document = web.Load("https://food.ltn.com.tw/article/4669");
             HtmlNode node = document.DocumentNode;
 
             HtmlNodeCollection List = node.SelectNodes("/html/body/div[5]/div[4]/div[1]/div[1]/a");
@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             //textBox1.Text += ListRecipe.Attributes["alt"].Value+"\r\n";
 
             HtmlNodeCollection RecipeBox = node.SelectNodes("//*[@id=\"food\"]/div[5]/div[4]/div[1]/div[3]/div[1]/div/dl");
-            
+
             //RecipeBox的數量 食材、調味料
             //int Num = RecipeBox.Count;
             //string List01 = "";
@@ -50,44 +50,21 @@ namespace WindowsFormsApp1
             //    }
             //    textBox1.Text += "----------------------\r\n";
             //}
-            
-           
-          
 
-            //textBox1.Text=arr01.Length.ToString();
-            //for (int i = 0; i<arr01.Length; i++)
-            //{
-            //    textBox1.Text += arr01[i] + "\r\n";
-            //}
-
-            //foreach (var item in arr01)
-            //{
-            //    textBox1.Text += item + "\n";
-            //}
-
-
-            //for (int i = 0; i < Num; i++)
-            //{
-            //    List01= RecipeBox[i].SelectSingleNode("dd").InnerText+"\r\n";
-            //    array01[i][]=List.
-            //    //arrDay = tempDay.Split(",".ToCharArray());
-            //}
+           HtmlNodeCollection NodeStep= node.SelectNodes("//*[@id=\"food\"]/div[5]/div[4]/div[1]/div[3]/div[2]/div");
 
 
 
-            //textBox1.Text+= RecipeBox[0].SelectSingleNode["./dd"].;
-
-
-
-            //ListRecipe.Attributes["src"].Value+"\r\n";
-
-
-
-            foreach (var item in RecipeBox)
+            foreach (var item in NodeStep)
             {
-                //textBox1.Text=recci
                 //textBox1.Text += "OK" + "\r\n";
-                //textBox1.Text+= item.SelectSingleNode("./dd").InnerText+"\r\n";
+                //*[@id="food"]/div[5]/div[4]/div[1]/div[3]/div[2]/div[1]/span
+                //*[@id="food"]/div[5]/div[4]/div[1]/div[3]/div[2]/div[1]/span/img
+                //textBox1.Text += item.InnerHtml + "\r\n";
+
+                textBox1.Text += item.SelectSingleNode("./span/img").Attributes["src"].Value + "\r\n";
+                textBox1.Text += item.SelectSingleNode("./div/p").InnerText + "\r\n";
+                textBox1.Text += "------------------\r\n";
                 //List01= item.SelectSingleNode("./dd").InnerText;
 
                 //textBox1.Text += item.SelectSingleNode("./img").Attributes["alt"].Value;
