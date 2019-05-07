@@ -70,7 +70,7 @@ namespace WindowsFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             HtmlWeb web = new HtmlWeb();
-            HtmlAgilityPack.HtmlDocument document = web.Load("https://food.ltn.com.tw/article/4669");
+            HtmlAgilityPack.HtmlDocument document = web.Load("https://food.ltn.com.tw/article/8305");
             HtmlNode node = document.DocumentNode;
 
             //img 食譜名稱
@@ -82,6 +82,7 @@ namespace WindowsFormsApp1
             HtmlNodeCollection List = node.SelectNodes("/html/body/div[5]/div[4]/div[1]/div[1]/a");
             textBox1.Text += List[3].InnerText + "\r\n";
             textBox1.Text += List[4].InnerText + "\r\n";
+            textBox1.Text += "----------------------\r\n";
 
             //RecipeBox的數量 食材、調味料
             HtmlNodeCollection RecipeBox = node.SelectNodes("//*[@id=\"food\"]/div[5]/div[4]/div[1]/div[3]/div[1]/div/dl");
