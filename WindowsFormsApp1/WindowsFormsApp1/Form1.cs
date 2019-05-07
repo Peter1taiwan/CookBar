@@ -75,13 +75,18 @@ namespace WindowsFormsApp1
 
             //img 食譜名稱
             HtmlNode ListRecipe = node.SelectSingleNode("/html/body/div[5]/div[4]/div[1]/div[3]/div[1]/img");
-            textBox1.Text += ListRecipe.Attributes["src"].Value + "\r\n";
-            textBox1.Text += ListRecipe.Attributes["alt"].Value + "\r\n";
+            textBox1.Text += string.Format("'{0}',", ListRecipe.Attributes["alt"].Value) + "\r\n";
+            textBox1.Text += string.Format("'{0}',", ListRecipe.Attributes["src"].Value)+"\r\n";
+            textBox1.Text += "----------------------\r\n";
+            //textBox1.Text += ListRecipe.Attributes["src"].Value + "\r\n";
+            //textBox1.Text += ListRecipe.Attributes["alt"].Value + "\r\n";
 
             //主要食材>次要食材
             HtmlNodeCollection List = node.SelectNodes("/html/body/div[5]/div[4]/div[1]/div[1]/a");
-            textBox1.Text += List[3].InnerText + "\r\n";
-            textBox1.Text += List[4].InnerText + "\r\n";
+            //textBox1.Text += List[3].InnerText + "\r\n";
+            //textBox1.Text += List[4].InnerText + "\r\n";
+            textBox1.Text += string.Format("'{0}',", List[3].InnerText) + "\r\n";
+            textBox1.Text += string.Format("'{0}',", List[4].InnerText) + "\r\n";
             textBox1.Text += "----------------------\r\n";
 
             //RecipeBox的數量 食材、調味料
@@ -95,7 +100,9 @@ namespace WindowsFormsApp1
                 string[] arr01 = List01.Split(delim, StringSplitOptions.RemoveEmptyEntries);
                 foreach (var item in arr01)
                 {
-                    textBox1.Text += item + "\r\n";
+                    //textBox1.Text += item + "\r\n";
+                    textBox1.Text += string.Format("'{0}',", item) + "\r\n";
+
                 }
                 textBox1.Text += "----------------------\r\n";
             }
@@ -106,8 +113,10 @@ namespace WindowsFormsApp1
             {
                 //textBox1.Text += "OK" + "\r\n";
 
-                textBox1.Text += item.SelectSingleNode("./span/img").Attributes["src"].Value + "\r\n";
-                textBox1.Text += item.SelectSingleNode("./div/p").InnerText + "\r\n";
+                //textBox1.Text += item.SelectSingleNode("./span/img").Attributes["src"].Value + "\r\n";
+                //textBox1.Text += item.SelectSingleNode("./div/p").InnerText + "\r\n";
+                textBox1.Text += string.Format("'{0}',", item.SelectSingleNode("./div/p").InnerText) + "\r\n";
+                textBox1.Text += string.Format("'{0}',", item.SelectSingleNode("./span/img").Attributes["src"].Value) + "\r\n";
                 textBox1.Text += "------------------\r\n";
             }
 
