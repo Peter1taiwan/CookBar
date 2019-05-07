@@ -70,7 +70,7 @@ namespace WindowsFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             HtmlWeb web = new HtmlWeb();
-            HtmlAgilityPack.HtmlDocument document = web.Load("https://food.ltn.com.tw/article/8305");
+            HtmlAgilityPack.HtmlDocument document = web.Load("https://food.ltn.com.tw/article/6667");
             HtmlNode node = document.DocumentNode;
 
             //img 食譜名稱
