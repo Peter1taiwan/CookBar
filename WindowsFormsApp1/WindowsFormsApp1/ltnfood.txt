@@ -2,15 +2,24 @@
 https://food.ltn.com.tw/article/4484
 
 
-"食物類別"
+"食物類別" OK
 /html/body/div[5]/div[4]/div[1]/div[1]/a[1]  首頁
 /html/body/div[5]/div[4]/div[1]/div[1]/a[2]  找食譜
 /html/body/div[5]/div[4]/div[1]/div[1]/a[3]  主要食材
 /html/body/div[5]/div[4]/div[1]/div[1]/a[4]  肉類
 /html/body/div[5]/div[4]/div[1]/div[1]/a[5]  牛肉
 
-"食譜"
+"食譜" 
 /html/body/div[5]/div[4]/div[1]/div[3]
 /html/body/div[5]/div[4]/div[1]/div[3]/div[1]/img   src alt
 
-/html/body/div[5]/div[4]/div[1]/div[3]/div[1]/div/dl[1]/dd
+"食材 調味料"  //目前最多三層   調味料A  調味料B
+//*[@id="food"]/div[5]/div[4]/div[1]/div[3]/div[1]/div
+
+
+"'步驟"
+//*[@id="food"]/div[5]/div[4]/div[1]/div[3]/div[2]
+
+//*[@id="food"]/div[5]/div[4]/div[1]/div[3]/div[2]/div[1]
+
+
